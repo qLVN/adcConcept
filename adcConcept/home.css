@@ -1,0 +1,369 @@
+:root {
+    --primaryText: #333;
+}
+
+body {
+    font-family: helvetica, sans-serif;
+	background: -webkit-gradient(linear,left top,right top,from(#c5ccd4),color-stop(71%, #c5ccd4),color-stop(72%, #cbd2d8),to(#cbd2d8));
+    -webkit-background-size: 0.438em 100%;
+    margin: 44px 16px 106px 16px;
+    -webkit-user-select: none;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: #4C4C4C;
+    text-shadow: #FFF 0 1px 0;
+}
+
+.title-bar {
+    position: fixed;
+    width: 100%;
+    height: 44px;
+    top: 0px;
+    left: 0px;
+    z-index: 1;
+    -webkit-box-shadow: rgba(0, 0, 0, 0.53) 0px 0px 4px;
+    background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#cdd5df), color-stop(3%, #b0bccd), color-stop(50%, #889bb3), color-stop(51%, #8195af), color-stop(97%, #6d84a2), to(#2d3642));
+}
+
+.title-bar #title {
+    position: absolute;
+    font-weight: bold;
+    top: 13px;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    color: #FFF;
+    text-shadow: rgba(0, 0, 0, 0.6) 0 -1px 0;
+}
+
+.title-bar #settings-button {
+    font-size: 9pt;
+    font-weight: 400;
+    position: absolute;
+    padding: 7px 10px;
+    top: 8px;
+    right: 10px;
+    color: #FFF;
+    text-shadow: rgba(0, 0, 0, 0.6) 0 -1px 0;
+    -webkit-box-shadow: black 0.3px 0.5px 1.5px inset, rgba(255, 255, 255, 0.24) 0 1px 0;
+    background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#9badc6), to(#41618d));
+    border-radius: 5px;
+}
+
+.title-bar #settings-button:active {
+    background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#91a4bd), to(#0d2a52));
+}
+
+#console {
+    border-radius: 10px;
+    width: calc(100% - 22px);
+    width: -webkit-calc(100% - 22px);
+    height: 300px;
+    outline: none;
+    padding: 10px;
+    font-size: 8pt;
+    margin-top: 50px;
+}
+
+#console::-webkit-scrollbar {
+    display: none;
+}
+
+.navbar {
+    position: absolute;
+    top: 44px;
+    left: 0px;
+    width: 100%;
+    height: 80px;
+    background: -webkit-linear-gradient(90deg, rgba(194,198,205,1) 0%, rgba(225,228,235,1) 100%);
+    border-bottom: 1px solid rgb(148, 155, 163);
+}
+
+.navbar #datespan {
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    left: 0px;
+    top: 15px;
+    font-size: 12pt;
+    font-weight: bold;
+    color: var(--primaryText);
+    text-shadow: white 0 1px 0;
+}
+
+.navbar #month {
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    left: 0px;
+    top: 38px;
+    font-size: 9pt;
+    font-weight: bold;
+    color: var(--primaryText);
+    text-shadow: white 0 1px 0;
+}
+
+.navbar img {
+    position: absolute;
+    height: 15px;
+    top: 23px;
+}
+
+.navbar .left {
+    left: 20px;
+}
+
+.navbar .right {
+    right: 20px;
+}
+
+#agenda-wrapper {
+    position: absolute;
+    top: 105px;
+    left: 0px;
+    width: 100%;
+    height: 400px;
+    white-space: nowrap;
+    border-bottom: 1px solid rgb(148, 155, 163);
+    overflow-x: auto;
+    overflow-y: hidden;
+    -webkit-box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 4px;
+}
+
+#agenda-wrapper::-webkit-scrollbar {
+    display: none;
+}
+
+#agenda-wrapper .day-bar {
+    position: relative;
+    height: calc(100% - 20px);
+    height: -webkit-calc(100% - 20px);;
+    width: 100px;
+    display: inline-block;
+    margin: 20px -5px 0px 0px;
+    background-color: #bdc0c7;
+    border-right: 1px solid rgb(148, 155, 163);
+}
+
+#agenda-wrapper .day-bar:nth-child(odd) {
+    margin-right: -4px;
+}
+
+#agenda-wrapper .day-bar:first-of-type {
+    margin-left: 25px;
+}
+
+#agenda-wrapper .day-bar .day-indicator {
+    position: absolute;
+    width: 100px;
+    text-align: center;
+    font-size: 8pt;
+    font-weight: bold;
+    color: var(--primaryText);
+    top: -20px;
+    text-shadow: rgba(255, 255, 255, 0.68) 0 1px 0;
+}
+
+#agenda-wrapper .day-bar div {
+    position: absolute;
+    width: 100%;
+    border-bottom: 1px solid rgb(148, 155, 163);
+    border-top: 1px solid rgb(148, 155, 163);
+    background-color: #dcdee1;
+}
+
+#agenda-wrapper .day-bar div span {
+    position: absolute
+}
+
+#agenda-wrapper .day-bar div .title {
+    font-size: 8pt;
+    color: var(--primaryText);
+    top: 5px;
+    left: 5px;
+    width: 90px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+#agenda-wrapper .day-bar div .subtitle {
+    font-size: 7pt;
+    color: var(--primaryText);
+    bottom: 5px;
+    right: 5px;
+}
+
+#agenda-wrapper .day-bar div.focused {
+    background-color: #4f6788;
+    -webkit-box-shadow: rgba(0, 0, 0, 0.66) 0px 0px 10px inset;
+}
+
+#agenda-wrapper .day-bar div.focused span {
+    color: white;
+    text-shadow: rgba(0, 0, 0, 0.6) 0 -1px 0;
+}
+
+#agenda-wrapper .time-bar {
+    position: fixed;
+    top: 125px;
+    height: 380px;
+    width: 24px;
+    background-color: #bdc0c7;
+    border-right: 1px solid rgb(148, 155, 163);
+}
+
+#agenda-wrapper .time-bar span {
+    color: var(--primaryText);
+    font-size: 6pt;
+    position: absolute;
+    right: 0px;
+    border-top: 1px solid rgb(148, 155, 163);
+    padding-right: 2px;
+}
+
+#settings-pane {
+    position: absolute;
+    z-index: 1000;
+    top: 44px;
+    left: 0px;
+    height: calc(100% - 44px);
+    height: -webkit-calc(100% - 44px);
+    padding: 0px 15px;
+    width: calc(100% - 30px);
+    width: -webkit-calc(100% - 30px);
+    background: -webkit-gradient(linear, left top, right top, from(#c5ccd4), color-stop(71%, #c5ccd4), color-stop(72%, #cbd2d8), to(#cbd2d8));
+    -webkit-background-size: 0.438em 100%;
+}
+
+#settings-pane input[type="email"], #settings-pane input[type="password"] {
+    width: calc(100% - 32px);
+    outline: none;
+    font-size: 11pt;
+    padding: 12px 15px;
+    border: 1px solid #878787;
+}
+
+#settings-pane input[type="submit"] {
+    outline: none;
+    width: 100%;
+    padding: 14px 0px;
+    font-size: 12pt;
+    border-radius: 8px;
+    color: var(--primaryText);
+    border: 1px solid #878787;
+    background-color: white;
+    margin-top: 22px;
+    font-weight: bold;
+    -webkit-box-shadow: rgba(0, 0, 0, 0.33) 0.3px 0.5px 1.5px inset, rgba(255, 255, 255, 0.24) 0 1px 0;
+}
+
+#settings-pane input[type="submit"]:active {
+    color: white;
+    background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#6baff6), to(#1b6ee0));
+}
+
+#settings-pane label {
+    display: block;
+    color: var(--primaryText);
+    text-shadow: #FFF 0 1px 0;
+    font-size: 11pt;
+    margin: 20px 0px 8px 0px;
+}
+
+#settings-pane .top {
+    border-radius: 10px 10px 0px 0px;
+    border-bottom: none !important;
+    -webkit-box-shadow: rgba(0, 0, 0, 0.33) 0.3px 0.5px 1.5px inset;
+}
+
+#settings-pane .bottom {
+    border-radius: 0px 0px 10px 10px;
+    -webkit-box-shadow: rgba(0, 0, 0, 0.33) 0.3px 0.5px 1.5px inset, rgba(255, 255, 255, 0.24) 0 1px 0;
+}
+
+#info {
+    position: absolute;
+    bottom: -15px;
+    height: 30px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* CHECKBOX: https://gist.github.com/awesome/5767055 */
+
+:root input[type="checkbox"] { /* :root here acting as a filter for older browsers */
+	position: absolute;
+	opacity: 0;
+}
+
+:root input[type="checkbox"].ios-switch + div {
+	display: inline-block;
+	vertical-align: middle;
+	width: 3em;	height: 1em;
+	border: 1px solid rgba(0,0,0,.3);
+	border-radius: 999px;
+	margin: 0 .5em;
+	background: white;
+	background-image: linear-gradient(rgba(0,0,0,.1), transparent),
+	                  linear-gradient(90deg, hsl(210, 90%, 60%) 50%, transparent 50%);
+	background-size: 200% 100%;
+	background-position: 100% 0;
+	background-origin: border-box;
+	background-clip: border-box;
+	overflow: hidden;
+	transition-duration: .4s;
+	transition-property: padding, width, background-position, text-indent;
+	box-shadow: 0 .1em .1em rgba(0,0,0,.2) inset,
+	            0 .45em 0 .1em rgba(0,0,0,.05) inset;
+	font-size: 150%; /* change this and see how they adjust! */
+}
+
+:root input[type="checkbox"].ios-switch:checked + div {
+	padding-left: 2em;	width: 1em;
+	background-position: 0 0;
+}
+
+:root input[type="checkbox"].ios-switch + div:before {
+	content: 'On';
+	float: left;
+	width: 1.65em; height: 1.65em;
+	margin: -.1em;
+	border: 1px solid rgba(0,0,0,.35);
+	border-radius: inherit;
+	background: white;
+	background-image: linear-gradient(rgba(0,0,0,.2), transparent);
+	box-shadow: 0 .1em .1em .1em hsla(0,0%,100%,.8) inset,
+	            0 0 .5em rgba(0,0,0,.3);
+	color: white;
+	text-shadow: 0 -1px 1px rgba(0,0,0,.3);
+	text-indent: -2.5em;
+}
+
+:root input[type="checkbox"].ios-switch:active + div:before {
+	background-color: #eee;
+}
+
+:root input[type="checkbox"].ios-switch:focus + div {
+	box-shadow: 0 .1em .1em rgba(0,0,0,.2) inset,
+	            0 .45em 0 .1em rgba(0,0,0,.05) inset,
+	            0 0 .4em 1px rgba(255,0,0,.5);
+}
+
+:root input[type="checkbox"].ios-switch + div:before,
+:root input[type="checkbox"].ios-switch + div:after {
+	font: bold 60%/1.9 sans-serif;
+	text-transform: uppercase;
+}
+
+:root input[type="checkbox"].ios-switch + div:after {
+	content: 'Off';
+	float: left;
+	text-indent: .5em;
+	color: rgba(0,0,0,.45);
+	text-shadow: none;
+
+}

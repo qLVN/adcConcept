@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<title>adcConcept</title>
+	<link rel="stylesheet" href="home.css" />
+	<script src="data.js"></script>
+</head>
+<body>
+	<div class="title-bar">
+		<div id="title">Tomorrow</div>
+		<!-- <div id="settings-button" onclick="toggleSettings();">Settings</div> -->
+	</div>
+	<div class="navbar" id="navbar" style="display: none;">
+		<div id="datespan">mon. 01 - fri. 05</div>
+		<div id="month">november 2024</div>
+		<img class="left" src="arrow_left.png" onclick="previousWeek();" />
+		<img class="right" src="arrow_right.png" onclick="nextWeek();" />
+	</div>
+	<textarea id="console" spellcheck="false" readonly>mainWebView loaded.</textarea>
+	<div id="agenda-wrapper" style="display: none;">
+		<div class="day-bar" id="monday">
+			<span class="day-indicator">monday</span>
+		</div>
+		<div class="day-bar" id="tuesday">
+			<span class="day-indicator">tuesday</span>
+		</div>
+		<div class="day-bar" id="wednesday">
+			<span class="day-indicator">wednesday</span>
+		</div>
+		<div class="day-bar" id="thursday">
+			<span class="day-indicator">thursday</span>
+		</div>
+		<div class="day-bar" id="friday">
+			<span class="day-indicator">friday</span>
+		</div>
+		<div class="time-bar">
+			<span style="top: 5px;">08:00</span>
+			<span style="top: 65px;">10:00</span>
+			<span style="top: 125px;">12:00</span>
+			<span style="top: 185px;">14:00</span>
+			<span style="top: 245px;">16:00</span>
+			<span style="top: 305px;">18:00</span>
+			<span style="top: 365px;">20:00</span>
+		</div>
+	</div>
+	<h5 id="info" style="display: none;"></h5>
+	<div id="settings-pane" style="display: none;">
+		<label>Account</label>
+		<input type="email" placeholder="E-Mail" spellcheck="false" class="top" />
+		<input type="password" placeholder="Password" class="bottom" />
+		<input type="submit" value="Sign In"/>
+		<label>Behavior</label>
+		<input type="checkbox" class="ios-switch" />
+	</div>
+</body>
+</html>
