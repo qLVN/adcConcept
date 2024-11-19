@@ -53,6 +53,13 @@ function addEvent(item, firstTimeLoading) {
 
 		topOffset = 5 + (itemStartDate.getHours() - 8)*30 + itemStartDate.getMinutes()/2;
 
+		if(itemStartDate.getMinutes() < 10) {
+			formattedStartTime = itemStartDate.getHours() + ':0' + itemStartDate.getMinutes();
+
+		} else {
+			formattedStartTime = itemStartDate.getHours() + ':' + itemStartDate.getMinutes();
+		}
+
 		//calculating difference in time
 		timeDiff = Math.abs(itemEndDate - itemStartDate);
 		hoursDiff = Math.floor(timeDiff / (1000 * 60 * 60));
@@ -75,10 +82,10 @@ function addEvent(item, firstTimeLoading) {
 			room = item['places'][0]['code'];
 			if(room == '35') { room = 'LL35'; } //Room 35 is called "Learning Lab"
 
-			document.getElementById(itemDay).innerHTML += '<div onclick="toggleEvent(this);" eventName="' + item['name'] + '" style="height: ' + height + 'px; top: ' + topOffset + 'px;"><span class="title">' + item['name'] + '</span><span class="subtitle">' + place + ' - ' + room + '</span></div>';
+			document.getElementById(itemDay).innerHTML += '<div onclick="toggleEvent(this);" eventName="' + item['name'] + '" eventStartTime="' + formattedStartTime + '" style="height: ' + height + 'px; top: ' + topOffset + 'px;"><span class="title">' + item['name'] + '</span><span class="subtitle">' + place + ' - ' + room + '</span></div>';
 		}
 		else {
-			document.getElementById(itemDay).innerHTML += '<div onclick="toggleEvent(this);" eventName="' + item['name'] + '" style="height: ' + height + 'px; top: ' + topOffset + 'px;"><span class="title">' + item['name'] + '</span></div>';
+			document.getElementById(itemDay).innerHTML += '<div onclick="toggleEvent(this);" eventName="' + item['name'] + '" eventStartTime="' + formattedStartTime + '" style="height: ' + height + 'px; top: ' + topOffset + 'px;"><span class="title">' + item['name'] + '</span></div>';
 		}
 	}
 	
@@ -155,7 +162,7 @@ function toggleEvent(event) {
 
 		event.className = 'focused';
 		previousFocusedElement = event;
-		infoText.innerText = event.getAttribute('eventName');
+		infoText.innerText = event.getAttribute('eventStartTime') + ' — ' + event.getAttribute('eventName');
 		infoText.style.display = 'block';
 	} else {
 		event.className = '';

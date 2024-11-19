@@ -15,7 +15,7 @@
 @implementation ViewController
 
 bool debug = NO;
-bool noConnect = YES; //debug: doesn't start making requests.
+bool noConnect = NO; //debug: doesn't start making requests.
 
 NSString *phpSessId;
 //NSString *phpSessId = @"";
@@ -367,12 +367,12 @@ NSString *mondayDateToLoad = nil;
         // Calculate the difference between the current day and Monday (assuming Monday is the first day of the week)
         NSInteger daysUntilMonday = (components.weekday - [calendar firstWeekday] + 7) % 7;
         NSDateComponents *mondayComponents = [NSDateComponents new];
-        mondayComponents.day = -daysUntilMonday;
+        mondayComponents.day = -daysUntilMonday + 1;
         
         // Calculate the difference between the current day and Friday
         NSInteger daysUntilFriday = 5 - components.weekday;
         NSDateComponents *fridayComponents = [NSDateComponents new];
-        fridayComponents.day = daysUntilFriday;
+        fridayComponents.day = daysUntilFriday + 1;
         
         // Get the Monday and Friday dates
         NSDate *mondayDate = [calendar dateByAddingComponents:mondayComponents toDate:currentDate options:0];

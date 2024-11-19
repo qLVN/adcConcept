@@ -23,13 +23,14 @@ h1, h2, h3, h4, h5, h6 {
     left: 0px;
     z-index: 1;
     -webkit-box-shadow: rgba(0, 0, 0, 0.53) 0px 0px 4px;
-    background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#cdd5df), color-stop(3%, #b0bccd), color-stop(50%, #889bb3), color-stop(51%, #8195af), color-stop(97%, #6d84a2), to(#2d3642));
+    background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#cdd5df), color-stop(3%, #becbdd), color-stop(50%, #889bb3), color-stop(51%, #8195af), color-stop(97%, #587397), to(#2d3642))
 }
 
 .title-bar #title {
     position: absolute;
     font-weight: bold;
-    top: 13px;
+    font-size: 13pt;
+    top: 12px;
     left: 0;
     width: 100%;
     text-align: center;
@@ -145,7 +146,7 @@ h1, h2, h3, h4, h5, h6 {
     width: 100px;
     display: inline-block;
     margin: 20px -5px 0px 0px;
-    background-color: #bdc0c7;
+    background: -webkit-linear-gradient(90deg, rgb(170, 174, 181) 0%, rgb(195, 198, 204) 100%);
     border-right: 1px solid rgb(148, 155, 163);
 }
 
@@ -212,7 +213,7 @@ h1, h2, h3, h4, h5, h6 {
     top: 125px;
     height: 380px;
     width: 24px;
-    background-color: #bdc0c7;
+    background: -webkit-linear-gradient(90deg, rgb(170, 174, 181) 0%, rgb(195, 198, 204) 100%);
     border-right: 1px solid rgb(148, 155, 163);
 }
 
