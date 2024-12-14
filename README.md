@@ -7,4 +7,4 @@ For now, it is relying on a basic UIWebView wrapper to show content and only the
 
 In the definitive version, a full coverage of Tomorrow and proper UI (No web wrapper) are planned.
 
-There are no plans to make this work on other iOS versions such as iOS 7. Although it might work on iOS 5 versions and maybe older one, not tested.
+There are no plans to make this work on other iOS versions such as iOS 7. Although it might work on iOS 5 versions and maybe older ones, although not tested.
